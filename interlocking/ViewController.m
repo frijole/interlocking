@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "TransitHandler.h"
 
 @interface ViewController ()
 
@@ -22,6 +23,16 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (IBAction)updateButtonPressed:(id)sender {
+    [[TransitHandler defaultHandler] updateDataWithCompletion:^(NSDictionary *transitData, NSError *error) {
+        if ( error ) {
+            self.statusLabel.text = [NSString stringWithFormat:@"Error: %@", error.localizedDescription];
+        } else {
+            self.statusLabel.text = [NSString stringWithFormat:@"Transit Data Updated\n%@", [transitData valueForKeyPath:@"service.timestamp"]];
+        }
+    }];
 }
 
 @end

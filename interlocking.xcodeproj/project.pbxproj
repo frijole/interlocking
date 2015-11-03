@@ -13,6 +13,7 @@
 		3C2C80AE1BE832AA00CA1886 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3C2C80AC1BE832AA00CA1886 /* Main.storyboard */; };
 		3C2C80B01BE832AA00CA1886 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3C2C80AF1BE832AA00CA1886 /* Assets.xcassets */; };
 		3C2C80B31BE832AA00CA1886 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3C2C80B11BE832AA00CA1886 /* LaunchScreen.storyboard */; };
+		3C2C80BC1BE832C800CA1886 /* TransitHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C2C80BB1BE832C800CA1886 /* TransitHandler.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,8 @@
 		3C2C80AF1BE832AA00CA1886 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3C2C80B21BE832AA00CA1886 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3C2C80B41BE832AA00CA1886 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3C2C80BA1BE832C800CA1886 /* TransitHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TransitHandler.h; sourceTree = "<group>"; };
+		3C2C80BB1BE832C800CA1886 /* TransitHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TransitHandler.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +66,8 @@
 				3C2C80A91BE832AA00CA1886 /* ViewController.h */,
 				3C2C80AA1BE832AA00CA1886 /* ViewController.m */,
 				3C2C80AC1BE832AA00CA1886 /* Main.storyboard */,
+				3C2C80BA1BE832C800CA1886 /* TransitHandler.h */,
+				3C2C80BB1BE832C800CA1886 /* TransitHandler.m */,
 				3C2C80AF1BE832AA00CA1886 /* Assets.xcassets */,
 				3C2C80B11BE832AA00CA1886 /* LaunchScreen.storyboard */,
 				3C2C80B41BE832AA00CA1886 /* Info.plist */,
@@ -151,6 +156,7 @@
 			files = (
 				3C2C80AB1BE832AA00CA1886 /* ViewController.m in Sources */,
 				3C2C80A81BE832AA00CA1886 /* AppDelegate.m in Sources */,
+				3C2C80BC1BE832C800CA1886 /* TransitHandler.m in Sources */,
 				3C2C80A51BE832AA00CA1886 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

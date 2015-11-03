@@ -10,6 +10,10 @@
 
 @interface ViewController : UIViewController
 
+@property (nonatomic, weak) IBOutlet UILabel *statusLabel;
+@property (nonatomic, weak) IBOutlet UIButton *updateButton;
+
+- (IBAction)updateButtonPressed:(id)sender;
 
 @end
 
