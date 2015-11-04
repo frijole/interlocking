@@ -14,13 +14,18 @@ NSString *const kXMLReaderTextNodeKey = @"textInProgress";
 
 @interface TransitHandler () <NSXMLParserDelegate>
 
-@property (nonatomic, strong, readwrite) NSDictionary *transitData;
+@property (readwrite) NSDictionary *transitData;
+
+@property (readwrite) BOOL updating;
+@property (readwrite) NSDate *lastUpdated;
+
+@property (readwrite) NSArray *subwayStatus;
 
 //Parser internals
-@property (nonatomic, strong) NSMutableDictionary *rootDictionary;
-@property (nonatomic, strong) NSMutableArray *elementStack;
-@property (nonatomic, strong) NSMutableDictionary *elementInProgress;
-@property (nonatomic, strong) NSMutableString *textInProgress;
+@property NSMutableDictionary *rootDictionary;
+@property NSMutableArray *elementStack;
+@property NSMutableDictionary *elementInProgress;
+@property NSMutableString *textInProgress;
 
 @end
 
@@ -33,27 +38,39 @@ NSString *const kXMLReaderTextNodeKey = @"textInProgress";
     return _defaultHandler;
 }
 
-- (void)updateDataWithCompletion:(void (^)(NSDictionary *, NSError *))completionBlock {
+- (void)updateDataWithCompletion:(void (^)(NSArray<SubwayLine *> *, NSError *))completionBlock {
     NSURL *dataURL = [NSURL URLWithString:@"http://web.mta.info/status/serviceStatus.txt"];
     NSURLSessionTask *dataTask = [[NSURLSession sharedSession]
                                   dataTaskWithURL:dataURL
                                   completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
                                       if ( error ) {
-                                          NSLog(@"error getting train status: %@", error);
+                                          NSLog(@"error updating status: %@", error);
+                                          if ( completionBlock ) {
+                                              completionBlock(nil, error);
+                                          }
                                           return;
                                       }
                                       NSString *tmpDataString = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
-                                      NSLog(@"fetched train status: %@ bytes", @(tmpDataString.length));
+                                      NSLog(@"fetched status: %@ bytes", @(tmpDataString.length));
                                       
                                       NSXMLParser *tmpParser = [[NSXMLParser alloc] initWithData:[tmpDataString dataUsingEncoding:NSUTF8StringEncoding]];
                                       [tmpParser setDelegate:self];
                                       BOOL tmpParsed = [tmpParser parse];
                                       
                                       if ( tmpParsed ) {
+                                          tmpParsed = [self parseTransitData:self.transitData];
+                                      }
+                                      
+                                      if ( tmpParsed ) {
                                           if ( completionBlock ) {
-                                              dispatch_async(dispatch_get_main_queue(), ^{ completionBlock(self.transitData, nil); });
+                                              dispatch_async(dispatch_get_main_queue(), ^{ completionBlock(self.subwayStatus, nil); });
                                           }
                                       } else {
+                                          NSLog(@"parsing failed! clearing all data");
+                                          self.rootDictionary = nil;
+                                          self.transitData = nil;
+                                          self.subwayStatus = nil;
+                                          
                                           if ( completionBlock ) {
                                               NSError *tmpError = nil; // wat
                                               dispatch_async(dispatch_get_main_queue(), ^{ completionBlock(nil, tmpError); });
@@ -63,6 +80,30 @@ NSString *const kXMLReaderTextNodeKey = @"textInProgress";
     [dataTask resume];
 }
 
+- (BOOL)parseTransitData:(NSDictionary *)transitData {
+    BOOL rtnStatus = NO;
+    
+    // TODO: parse dictionary into array of subway line objects
+    NSMutableArray *tmpSubwayLines = [NSMutableArray array];;
+    for ( NSDictionary *tmpSubwayDict in [transitData valueForKeyPath:@"service.subway.line"] ) {
+        SubwayLine *tmpSubwayLine = [[SubwayLine alloc] initWithDictionary:tmpSubwayDict];
+        if ( tmpSubwayLine ) {
+            [tmpSubwayLines addObject:tmpSubwayLine];
+        }
+    }
+    if ( tmpSubwayLines.count > 0 ) {
+        self.subwayStatus = [NSArray arrayWithArray:tmpSubwayLines];
+        rtnStatus = YES;
+    }
+    
+    // try to parse a date?
+    NSString *tmpTimestampString = [transitData valueForKeyPath:@"service.timestamp"];
+    NSDate *tmpTimestampDate = [[NSDateFormatter transitTimestampFormatter] dateFromString:tmpTimestampString];
+    self.lastUpdated = tmpTimestampDate;
+    
+    return rtnStatus;
+}
+
 #pragma - NSXMLParserDelegate
 
 - (void)parser:(NSXMLParser *)parser parseErrorOccurred:(NSError *)parseError {
@@ -70,7 +111,7 @@ NSString *const kXMLReaderTextNodeKey = @"textInProgress";
 }
 
 - (void)parserDidStartDocument:(NSXMLParser *)parser {
-    NSLog(@"parserDidStartDocument: %@", parser);
+    // NSLog(@"parserDidStartDocument: %@", parser);
 
     self.rootDictionary = [NSMutableDictionary dictionary];
     self.elementStack = [NSMutableArray arrayWithObject:self.rootDictionary];
@@ -127,10 +168,24 @@ NSString *const kXMLReaderTextNodeKey = @"textInProgress";
 }
 
 - (void)parserDidEndDocument:(NSXMLParser *)parser {
-    NSLog(@"parserDidEndDocument: %@", parser);
-    
     self.transitData = self.rootDictionary;
     self.rootDictionary = nil;
+}
+
+@end
+
+static NSDateFormatter *_transitTimestampFormatter = nil;
+
+@implementation NSDateFormatter (TransitHandler)
+
++ (NSDateFormatter *)transitTimestampFormatter {
+    if ( !_transitTimestampFormatter ) {
+        // create and configure
+        _transitTimestampFormatter = [[NSDateFormatter alloc] init];
+        [_transitTimestampFormatter setDateFormat:@"M/d/yyyy hh:mm:ss a"];
+        [_transitTimestampFormatter setTimeZone:[NSTimeZone timeZoneWithName:@"America/New_York"]];
+    }
+    return _transitTimestampFormatter;
 }
 
 @end

@@ -9,11 +9,12 @@
 /* Begin PBXBuildFile section */
 		3C2C80A51BE832AA00CA1886 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C2C80A41BE832AA00CA1886 /* main.m */; };
 		3C2C80A81BE832AA00CA1886 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C2C80A71BE832AA00CA1886 /* AppDelegate.m */; };
-		3C2C80AB1BE832AA00CA1886 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C2C80AA1BE832AA00CA1886 /* ViewController.m */; };
+		3C2C80AB1BE832AA00CA1886 /* SubwayTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C2C80AA1BE832AA00CA1886 /* SubwayTableViewController.m */; };
 		3C2C80AE1BE832AA00CA1886 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3C2C80AC1BE832AA00CA1886 /* Main.storyboard */; };
 		3C2C80B01BE832AA00CA1886 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3C2C80AF1BE832AA00CA1886 /* Assets.xcassets */; };
 		3C2C80B31BE832AA00CA1886 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3C2C80B11BE832AA00CA1886 /* LaunchScreen.storyboard */; };
 		3C2C80BC1BE832C800CA1886 /* TransitHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C2C80BB1BE832C800CA1886 /* TransitHandler.m */; };
+		3C2C80BF1BE98B5B00CA1886 /* TransitObjects.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C2C80BE1BE98B5B00CA1886 /* TransitObjects.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,14 +22,16 @@
 		3C2C80A41BE832AA00CA1886 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		3C2C80A61BE832AA00CA1886 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		3C2C80A71BE832AA00CA1886 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		3C2C80A91BE832AA00CA1886 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		3C2C80AA1BE832AA00CA1886 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		3C2C80A91BE832AA00CA1886 /* SubwayTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SubwayTableViewController.h; sourceTree = "<group>"; };
+		3C2C80AA1BE832AA00CA1886 /* SubwayTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SubwayTableViewController.m; sourceTree = "<group>"; };
 		3C2C80AD1BE832AA00CA1886 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		3C2C80AF1BE832AA00CA1886 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3C2C80B21BE832AA00CA1886 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3C2C80B41BE832AA00CA1886 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3C2C80BA1BE832C800CA1886 /* TransitHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TransitHandler.h; sourceTree = "<group>"; };
 		3C2C80BB1BE832C800CA1886 /* TransitHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TransitHandler.m; sourceTree = "<group>"; };
+		3C2C80BD1BE98B5B00CA1886 /* TransitObjects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TransitObjects.h; sourceTree = "<group>"; };
+		3C2C80BE1BE98B5B00CA1886 /* TransitObjects.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TransitObjects.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,11 +66,13 @@
 			children = (
 				3C2C80A61BE832AA00CA1886 /* AppDelegate.h */,
 				3C2C80A71BE832AA00CA1886 /* AppDelegate.m */,
-				3C2C80A91BE832AA00CA1886 /* ViewController.h */,
-				3C2C80AA1BE832AA00CA1886 /* ViewController.m */,
+				3C2C80A91BE832AA00CA1886 /* SubwayTableViewController.h */,
+				3C2C80AA1BE832AA00CA1886 /* SubwayTableViewController.m */,
 				3C2C80AC1BE832AA00CA1886 /* Main.storyboard */,
 				3C2C80BA1BE832C800CA1886 /* TransitHandler.h */,
 				3C2C80BB1BE832C800CA1886 /* TransitHandler.m */,
+				3C2C80BD1BE98B5B00CA1886 /* TransitObjects.h */,
+				3C2C80BE1BE98B5B00CA1886 /* TransitObjects.m */,
 				3C2C80AF1BE832AA00CA1886 /* Assets.xcassets */,
 				3C2C80B11BE832AA00CA1886 /* LaunchScreen.storyboard */,
 				3C2C80B41BE832AA00CA1886 /* Info.plist */,
@@ -154,8 +159,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3C2C80AB1BE832AA00CA1886 /* ViewController.m in Sources */,
+				3C2C80AB1BE832AA00CA1886 /* SubwayTableViewController.m in Sources */,
 				3C2C80A81BE832AA00CA1886 /* AppDelegate.m in Sources */,
+				3C2C80BF1BE98B5B00CA1886 /* TransitObjects.m in Sources */,
 				3C2C80BC1BE832C800CA1886 /* TransitHandler.m in Sources */,
 				3C2C80A51BE832AA00CA1886 /* main.m in Sources */,
 			);
@@ -304,6 +310,7 @@
 				3C2C80B91BE832AA00CA1886 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

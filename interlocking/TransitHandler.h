@@ -7,13 +7,23 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "TransitObjects.h"
 
 @interface TransitHandler : NSObject
 
-@property (nonatomic, readonly) NSDictionary *transitData;
+@property (readonly, getter=isUpdating) BOOL updating;
+@property (readonly, copy) NSDate *lastUpdated;
+
+@property (readonly) NSArray<SubwayLine*> *subwayStatus;
 
 + (TransitHandler *)defaultHandler;
 
-- (void)updateDataWithCompletion:(void (^)(NSDictionary *transitData, NSError *error))completionBlock;
+- (void)updateDataWithCompletion:(void (^)(NSArray<SubwayLine*> *subwayStatus, NSError *error))completionBlock;
+
+@end
+
+@interface NSDateFormatter (TransitHandler)
+
++ (NSDateFormatter *)transitTimestampFormatter;
 
 @end
