@@ -7,6 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "TransitObjects.h"
+#import "SubwayLabel.h"
 
 @interface SubwayTableViewController : UITableViewController
 
@@ -16,3 +18,15 @@
 
 @end
 
+
+@interface SubwayTableViewCell : UITableViewCell
+
+@property (nonatomic, weak) IBOutlet SubwayLabel *firstTrainLabel;
+@property (nonatomic, weak) IBOutlet SubwayLabel *secondTrainLabel;
+@property (nonatomic, weak) IBOutlet SubwayLabel *thirdTrainLabel;
+@property (nonatomic, weak) IBOutlet SubwayLabel *fourthTrainLabel;
+@property (nonatomic, weak) IBOutlet UILabel *statusLabel;
+
+@property (nonatomic, strong) SubwayLine *subwayLine;
+
+@end
