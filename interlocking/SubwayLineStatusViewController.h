@@ -7,10 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "TransitObjects.h"
+#import <InterlockingKit/InterlockingKit.h>
 #import "SubwayLabel.h"
 
-@interface SubwayTableViewController : UITableViewController
+@interface SubwayLineStatusViewController : UITableViewController
 
 @property (nonatomic, weak) IBOutlet UIBarButtonItem *statusItem;
 
@@ -26,6 +26,7 @@
 @property (nonatomic, weak) IBOutlet SubwayLabel *thirdTrainLabel;
 @property (nonatomic, weak) IBOutlet SubwayLabel *fourthTrainLabel;
 @property (nonatomic, weak) IBOutlet UILabel *statusLabel;
+@property (nonatomic, weak) IBOutlet UILabel *serviceLabel;
 
 @property (nonatomic, strong) SubwayLine *subwayLine;
 

@@ -19,7 +19,7 @@ NSString *const kXMLReaderTextNodeKey = @"textInProgress";
 @property (readwrite) BOOL updating;
 @property (readwrite) NSDate *lastUpdated;
 
-@property (readwrite) NSArray *subwayStatus;
+@property (readwrite) NSArray *subwayLineStatus;
 
 //Parser internals
 @property NSMutableDictionary *rootDictionary;
@@ -63,13 +63,13 @@ NSString *const kXMLReaderTextNodeKey = @"textInProgress";
                                       
                                       if ( tmpParsed ) {
                                           if ( completionBlock ) {
-                                              dispatch_async(dispatch_get_main_queue(), ^{ completionBlock(self.subwayStatus, nil); });
+                                              dispatch_async(dispatch_get_main_queue(), ^{ completionBlock(self.subwayLineStatus, nil); });
                                           }
                                       } else {
                                           NSLog(@"parsing failed! clearing all data");
                                           self.rootDictionary = nil;
                                           self.transitData = nil;
-                                          self.subwayStatus = nil;
+                                          self.subwayLineStatus = nil;
                                           
                                           if ( completionBlock ) {
                                               NSError *tmpError = nil; // wat
@@ -92,7 +92,7 @@ NSString *const kXMLReaderTextNodeKey = @"textInProgress";
         }
     }
     if ( tmpSubwayLines.count > 0 ) {
-        self.subwayStatus = [NSArray arrayWithArray:tmpSubwayLines];
+        self.subwayLineStatus = [NSArray arrayWithArray:tmpSubwayLines];
         rtnStatus = YES;
     }
     

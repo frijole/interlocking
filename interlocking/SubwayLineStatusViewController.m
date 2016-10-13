@@ -6,18 +6,19 @@
 //  Copyright © 2015 Ian Meyer. All rights reserved.
 //
 
-#import "SubwayTableViewController.h"
-#import "TransitHandler.h"
+#import "SubwayLineStatusViewController.h"
+#import <InterlockingKit/TransitHandler.h>
 
-@interface SubwayTableViewController ()
+@interface SubwayLineStatusViewController ()
 
 @property (nonatomic, strong) NSArray *rows;
+@property (nonatomic, strong) NSMutableArray *expandedRows;
 
 - (void)refreshControlActivated;
 
 @end
 
-@implementation SubwayTableViewController
+@implementation SubwayLineStatusViewController
 
 - (void)awakeFromNib {
     [super awakeFromNib];
@@ -38,6 +39,13 @@
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
     [self refreshData];
+}
+
+- (NSMutableArray *)expandedRows {
+    if ( !_expandedRows ) {
+        _expandedRows = [NSMutableArray array];
+    }
+    return _expandedRows;
 }
 
 - (void)refreshControlActivated {
@@ -67,17 +75,44 @@
     return self.rows.count;
 }
 
+- (NSArray *)tableView:(UITableView *)tableView editActionsForRowAtIndexPath:(NSIndexPath *)indexPath {
+    NSArray *rtnActionArray = @[];
+    
+    UITableViewRowAction *watchAction = [UITableViewRowAction rowActionWithStyle:UITableViewRowActionStyleNormal
+                                                                           title:@"Add to Favorites"
+                                                                         handler:^(UITableViewRowAction * _Nonnull action, NSIndexPath * _Nonnull indexPath) {
+                                                                             NSLog(@"add to favorites: %@", indexPath);
+                                                                         }];
+    rtnActionArray = [rtnActionArray arrayByAddingObject:watchAction];
+    
+    return rtnActionArray;
+}
+
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *rtnCell = [tableView dequeueReusableCellWithIdentifier:@"subwayCell" forIndexPath:indexPath];
     SubwayLine *tmpLine = self.rows[indexPath.row];
     if ( [rtnCell respondsToSelector:@selector(setSubwayLine:)] ) {
         [(SubwayTableViewCell *)rtnCell setSubwayLine:tmpLine];
+    
+        if ( [self.expandedRows indexOfObject:indexPath] == NSNotFound ) {
+            [[(SubwayTableViewCell *)rtnCell serviceLabel] setText:nil];
+        }
     }
+    
     return rtnCell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    if ( [self.expandedRows indexOfObject:indexPath] == NSNotFound ) {
+        // not expanded, add to array
+        [self.expandedRows addObject:indexPath];
+    } else {
+        // expanded already, collapse
+        [self.expandedRows removeObject:indexPath];
+    }
+    
+    [tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
 }
 
 @end
@@ -107,6 +142,9 @@
     // status
     self.statusLabel.text = subwayLine.status;
 
+    // details
+    self.serviceLabel.text = subwayLine.serviceStatus;
+    
     // and trains
     NSArray *tmpTrainLabels = @[self.firstTrainLabel, self.secondTrainLabel, self.thirdTrainLabel, self.fourthTrainLabel];
 

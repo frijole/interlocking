@@ -9,35 +9,35 @@
 /* Begin PBXBuildFile section */
 		3C2C80A51BE832AA00CA1886 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C2C80A41BE832AA00CA1886 /* main.m */; };
 		3C2C80A81BE832AA00CA1886 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C2C80A71BE832AA00CA1886 /* AppDelegate.m */; };
-		3C2C80AB1BE832AA00CA1886 /* SubwayTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C2C80AA1BE832AA00CA1886 /* SubwayTableViewController.m */; };
+		3C2C80AB1BE832AA00CA1886 /* SubwayLineStatusViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C2C80AA1BE832AA00CA1886 /* SubwayLineStatusViewController.m */; };
 		3C2C80AE1BE832AA00CA1886 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3C2C80AC1BE832AA00CA1886 /* Main.storyboard */; };
 		3C2C80B01BE832AA00CA1886 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3C2C80AF1BE832AA00CA1886 /* Assets.xcassets */; };
 		3C2C80B31BE832AA00CA1886 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3C2C80B11BE832AA00CA1886 /* LaunchScreen.storyboard */; };
-		3C2C80BC1BE832C800CA1886 /* TransitHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C2C80BB1BE832C800CA1886 /* TransitHandler.m */; };
-		3C2C80BF1BE98B5B00CA1886 /* TransitObjects.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C2C80BE1BE98B5B00CA1886 /* TransitObjects.m */; };
 		3C2C80C21BEDD07000CA1886 /* SubwayLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C2C80C11BEDD07000CA1886 /* SubwayLabel.m */; };
 		3C2C80C51BEDD2BA00CA1886 /* UIColor+MTA.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C2C80C41BEDD2BA00CA1886 /* UIColor+MTA.m */; };
+		3C2C80C81BF1158400CA1886 /* ServiceAlertViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C2C80C71BF1158400CA1886 /* ServiceAlertViewController.m */; };
+		3C3DA6931DAFA26C0052B64A /* InterlockingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C3DA6921DAFA26C0052B64A /* InterlockingKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		3C2C80A01BE832AA00CA1886 /* interlocking.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = interlocking.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		3C2C80A01BE832AA00CA1886 /* InterlockingApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InterlockingApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3C2C80A41BE832AA00CA1886 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		3C2C80A61BE832AA00CA1886 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		3C2C80A71BE832AA00CA1886 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		3C2C80A91BE832AA00CA1886 /* SubwayTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SubwayTableViewController.h; sourceTree = "<group>"; };
-		3C2C80AA1BE832AA00CA1886 /* SubwayTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SubwayTableViewController.m; sourceTree = "<group>"; };
+		3C2C80A91BE832AA00CA1886 /* SubwayLineStatusViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SubwayLineStatusViewController.h; sourceTree = "<group>"; };
+		3C2C80AA1BE832AA00CA1886 /* SubwayLineStatusViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SubwayLineStatusViewController.m; sourceTree = "<group>"; };
 		3C2C80AD1BE832AA00CA1886 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		3C2C80AF1BE832AA00CA1886 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3C2C80B21BE832AA00CA1886 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3C2C80B41BE832AA00CA1886 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		3C2C80BA1BE832C800CA1886 /* TransitHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TransitHandler.h; sourceTree = "<group>"; };
-		3C2C80BB1BE832C800CA1886 /* TransitHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TransitHandler.m; sourceTree = "<group>"; };
-		3C2C80BD1BE98B5B00CA1886 /* TransitObjects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TransitObjects.h; sourceTree = "<group>"; };
-		3C2C80BE1BE98B5B00CA1886 /* TransitObjects.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TransitObjects.m; sourceTree = "<group>"; };
 		3C2C80C01BEDD07000CA1886 /* SubwayLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SubwayLabel.h; sourceTree = "<group>"; };
 		3C2C80C11BEDD07000CA1886 /* SubwayLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SubwayLabel.m; sourceTree = "<group>"; };
 		3C2C80C31BEDD2BA00CA1886 /* UIColor+MTA.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+MTA.h"; sourceTree = "<group>"; };
 		3C2C80C41BEDD2BA00CA1886 /* UIColor+MTA.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+MTA.m"; sourceTree = "<group>"; };
+		3C2C80C61BF1158400CA1886 /* ServiceAlertViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ServiceAlertViewController.h; sourceTree = "<group>"; };
+		3C2C80C71BF1158400CA1886 /* ServiceAlertViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ServiceAlertViewController.m; sourceTree = "<group>"; };
+		3C3DA6901DAF9F8C0052B64A /* interlocking-framework.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = "interlocking-framework.framework"; path = "interlocking-framework/build/Debug-iphoneos/interlocking-framework.framework"; sourceTree = "<group>"; };
+		3C3DA6921DAFA26C0052B64A /* InterlockingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = InterlockingKit.framework; path = "../../../../Library/Developer/Xcode/DerivedData/interlocking2-bkkehqmtfqzauxfrvnalinswbpgd/Build/Products/Debug-iphoneos/InterlockingKit.framework"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,6 +45,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3C3DA6931DAFA26C0052B64A /* InterlockingKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -55,6 +56,7 @@
 			isa = PBXGroup;
 			children = (
 				3C2C80A21BE832AA00CA1886 /* interlocking */,
+				3C3DA68F1DAF9F8C0052B64A /* Frameworks */,
 				3C2C80A11BE832AA00CA1886 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -62,7 +64,7 @@
 		3C2C80A11BE832AA00CA1886 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				3C2C80A01BE832AA00CA1886 /* interlocking.app */,
+				3C2C80A01BE832AA00CA1886 /* InterlockingApp.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -72,17 +74,15 @@
 			children = (
 				3C2C80A61BE832AA00CA1886 /* AppDelegate.h */,
 				3C2C80A71BE832AA00CA1886 /* AppDelegate.m */,
-				3C2C80A91BE832AA00CA1886 /* SubwayTableViewController.h */,
-				3C2C80AA1BE832AA00CA1886 /* SubwayTableViewController.m */,
+				3C2C80A91BE832AA00CA1886 /* SubwayLineStatusViewController.h */,
+				3C2C80AA1BE832AA00CA1886 /* SubwayLineStatusViewController.m */,
+				3C2C80C61BF1158400CA1886 /* ServiceAlertViewController.h */,
+				3C2C80C71BF1158400CA1886 /* ServiceAlertViewController.m */,
 				3C2C80C01BEDD07000CA1886 /* SubwayLabel.h */,
 				3C2C80C11BEDD07000CA1886 /* SubwayLabel.m */,
 				3C2C80C31BEDD2BA00CA1886 /* UIColor+MTA.h */,
 				3C2C80C41BEDD2BA00CA1886 /* UIColor+MTA.m */,
 				3C2C80AC1BE832AA00CA1886 /* Main.storyboard */,
-				3C2C80BA1BE832C800CA1886 /* TransitHandler.h */,
-				3C2C80BB1BE832C800CA1886 /* TransitHandler.m */,
-				3C2C80BD1BE98B5B00CA1886 /* TransitObjects.h */,
-				3C2C80BE1BE98B5B00CA1886 /* TransitObjects.m */,
 				3C2C80AF1BE832AA00CA1886 /* Assets.xcassets */,
 				3C2C80B11BE832AA00CA1886 /* LaunchScreen.storyboard */,
 				3C2C80B41BE832AA00CA1886 /* Info.plist */,
@@ -99,12 +99,21 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		3C3DA68F1DAF9F8C0052B64A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3C3DA6921DAFA26C0052B64A /* InterlockingKit.framework */,
+				3C3DA6901DAF9F8C0052B64A /* interlocking-framework.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		3C2C809F1BE832AA00CA1886 /* interlocking */ = {
+		3C2C809F1BE832AA00CA1886 /* InterlockingApp */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 3C2C80B71BE832AA00CA1886 /* Build configuration list for PBXNativeTarget "interlocking" */;
+			buildConfigurationList = 3C2C80B71BE832AA00CA1886 /* Build configuration list for PBXNativeTarget "InterlockingApp" */;
 			buildPhases = (
 				3C2C809C1BE832AA00CA1886 /* Sources */,
 				3C2C809D1BE832AA00CA1886 /* Frameworks */,
@@ -114,9 +123,9 @@
 			);
 			dependencies = (
 			);
-			name = interlocking;
+			name = InterlockingApp;
 			productName = interlocking;
-			productReference = 3C2C80A01BE832AA00CA1886 /* interlocking.app */;
+			productReference = 3C2C80A01BE832AA00CA1886 /* InterlockingApp.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -125,15 +134,16 @@
 		3C2C80981BE832AA00CA1886 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0710;
+				LastUpgradeCheck = 0800;
 				ORGANIZATIONNAME = "Ian Meyer";
 				TargetAttributes = {
 					3C2C809F1BE832AA00CA1886 = {
 						CreatedOnToolsVersion = 7.1;
+						DevelopmentTeam = W27P2Y376L;
 					};
 				};
 			};
-			buildConfigurationList = 3C2C809B1BE832AA00CA1886 /* Build configuration list for PBXProject "interlocking" */;
+			buildConfigurationList = 3C2C809B1BE832AA00CA1886 /* Build configuration list for PBXProject "InterlockingApp" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -146,7 +156,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				3C2C809F1BE832AA00CA1886 /* interlocking */,
+				3C2C809F1BE832AA00CA1886 /* InterlockingApp */,
 			);
 		};
 /* End PBXProject section */
@@ -169,13 +179,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3C2C80AB1BE832AA00CA1886 /* SubwayTableViewController.m in Sources */,
+				3C2C80AB1BE832AA00CA1886 /* SubwayLineStatusViewController.m in Sources */,
 				3C2C80A81BE832AA00CA1886 /* AppDelegate.m in Sources */,
-				3C2C80BF1BE98B5B00CA1886 /* TransitObjects.m in Sources */,
 				3C2C80C21BEDD07000CA1886 /* SubwayLabel.m in Sources */,
-				3C2C80BC1BE832C800CA1886 /* TransitHandler.m in Sources */,
 				3C2C80A51BE832AA00CA1886 /* main.m in Sources */,
 				3C2C80C51BEDD2BA00CA1886 /* UIColor+MTA.m in Sources */,
+				3C2C80C81BF1158400CA1886 /* ServiceAlertViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -214,8 +223,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -257,8 +268,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -285,6 +298,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = W27P2Y376L;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/InterlockingKit/build/Debug-iphoneos",
+				);
 				INFOPLIST_FILE = interlocking/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = info.frijole.interlocking;
@@ -296,6 +314,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = W27P2Y376L;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/InterlockingKit/build/Debug-iphoneos",
+				);
 				INFOPLIST_FILE = interlocking/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = info.frijole.interlocking;
@@ -306,7 +329,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		3C2C809B1BE832AA00CA1886 /* Build configuration list for PBXProject "interlocking" */ = {
+		3C2C809B1BE832AA00CA1886 /* Build configuration list for PBXProject "InterlockingApp" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				3C2C80B51BE832AA00CA1886 /* Debug */,
@@ -315,7 +338,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		3C2C80B71BE832AA00CA1886 /* Build configuration list for PBXNativeTarget "interlocking" */ = {
+		3C2C80B71BE832AA00CA1886 /* Build configuration list for PBXNativeTarget "InterlockingApp" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				3C2C80B81BE832AA00CA1886 /* Debug */,

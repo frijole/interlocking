@@ -15,13 +15,25 @@
 
 @end
 
-// Handy interface for parsed subway lines
+// Handy interface for parsed subway lines, eg: A/C/E, B/D/F/M
 @interface SubwayLine : TransitObject
 
 @property (nonatomic, copy) NSString *name;
 @property (nonatomic, copy) NSString *status;
 
 @property (nonatomic, copy) NSAttributedString *serviceInformation;
+@property (nonatomic, copy) NSString *serviceStatus; // simplified version of above
+@property (nonatomic, copy) NSString *serviceInformationUpdatedAt; // TODO: NSDate
+
+@end
+
+// For a single train, eg: F
+@interface SubwayTrain : TransitObject
+
+@property (nonatomic, copy) NSString *name;
+@property (nonatomic, copy) NSString *status;
+
+@property (nonatomic, copy) NSString *serviceStatus; // simplified version of above
 @property (nonatomic, copy) NSString *serviceInformationUpdatedAt; // TODO: NSDate
 
 @end

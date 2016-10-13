@@ -14,11 +14,12 @@
 @property (readonly, getter=isUpdating) BOOL updating;
 @property (readonly, copy) NSDate *lastUpdated;
 
-@property (readonly) NSArray<SubwayLine*> *subwayStatus;
+@property (readonly) NSArray<SubwayLine*> *subwayLineStatus;
+@property (readonly) NSArray<SubwayTrain*> *subwayTrainStatus;
 
 + (TransitHandler *)defaultHandler;
 
-- (void)updateDataWithCompletion:(void (^)(NSArray<SubwayLine*> *subwayStatus, NSError *error))completionBlock;
+- (void)updateDataWithCompletion:(void (^)(NSArray<SubwayLine*> *subwayLineStatus, NSError *error))completionBlock;
 
 @end
 
